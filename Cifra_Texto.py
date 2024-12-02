@@ -3,7 +3,7 @@ import sys
 
 # FUNCAO PARA CIFRAR TEXTO
 def cifra_texto(text, key):
-    alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'    # ALFABETO ALFANUMÉRICO PARA SUPORTE A CHAVES COM NÚMEROS
     with open(text, 'r') as arquivo_texto:          # ABRE O ARQUIVO
         conteudo = arquivo_texto.read().upper()     # COPIA O CONTEUDO DO ARQUIVO DE TEXTO PARA A VARIAVEL CONTEUDO E COLOCA TUDO PARA MAIUSCULO
     key = key.upper()                               # COLOCA A CHAVE TUDO EM MAIUSCULO
@@ -20,6 +20,7 @@ def cifra_texto(text, key):
         else:
             # Se o caractere não estiver no alfabeto, adicioná-lo sem cifragem
             texto_cifrado.append(conteudo[i])
+    
 
 
     return ''.join(texto_cifrado)
